@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="400.0" minWidth="477.0" prefHeight="400.0" prefWidth="477.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ArrayController">
+   <children>
+      <Pane layoutX="14.0" layoutY="50.0" prefHeight="100.0" prefWidth="450.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Button fx:id="addbtn" layoutX="5.0" layoutY="38.0" maxHeight="25.0" maxWidth="55.0" minHeight="25.0" minWidth="55.0" mnemonicParsing="false" onAction="#add" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: #ffffff;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="sortbtn" layoutX="305.0" layoutY="38.0" maxHeight="25.0" maxWidth="55.0" minHeight="25.0" minWidth="55.0" mnemonicParsing="false" onAction="#sort" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: #ffffff;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/sort.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="184.0" layoutY="38.0" maxHeight="25.0" maxWidth="55.0" minHeight="25.0" minWidth="55.0" mnemonicParsing="false" onAction="#search" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: #ffffff;">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="getbtn" layoutX="124.0" layoutY="38.0" maxHeight="25.0" maxWidth="55.0" minHeight="25.0" minWidth="55.0" mnemonicParsing="false" onAction="#get" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: #ffffff;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/get.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="delbtn" layoutX="65.0" layoutY="38.0" maxHeight="25.0" maxWidth="55.0" minHeight="25.0" minWidth="55.0" mnemonicParsing="false" onAction="#delete" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: #ffffff;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/del.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <RadioButton fx:id="rb1" layoutX="245.0" layoutY="30.0" mnemonicParsing="false" text="linear">
+               <toggleGroup>
+                  <ToggleGroup fx:id="search" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="rb2" layoutX="244.0" layoutY="55.0" mnemonicParsing="false" selected="true" text="binary" toggleGroup="$search" />
+            <RadioButton fx:id="rb3" layoutX="368.0" layoutY="30.0" mnemonicParsing="false" selected="true" text="insertion">
+               <toggleGroup>
+                  <ToggleGroup fx:id="sort" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="rb4" layoutX="368.0" layoutY="56.0" mnemonicParsing="false" text="quick" toggleGroup="$sort" />
+         </children>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="165.0" prefHeight="87.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <TextField fx:id="index" layoutX="87.0" layoutY="44.0" prefHeight="25.0" prefWidth="103.0" promptText="enter index" />
+            <TextField fx:id="text" layoutX="87.0" layoutY="14.0" prefHeight="25.0" prefWidth="103.0" promptText="enter data" />
+            <Label layoutX="14.0" layoutY="22.0" text="DATA:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="49.0" text="INDEX:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Label fx:id="resultLabel" layoutX="14.0" layoutY="271.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="display" layoutX="286.0" layoutY="175.0" minWidth="50.0" style="-fx-background-color: #ffffff;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="286.0" layoutY="156.0" prefHeight="20.0" prefWidth="50.0" style="-fx-background-color: #ffffff;" text="Array:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button layoutX="27.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="20.0" prefWidth="23.0" style="-fx-background-color: #ffffff;">
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
